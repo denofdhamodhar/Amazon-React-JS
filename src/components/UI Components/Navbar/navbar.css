@@ -1,0 +1,18 @@
+.center-content{
+    padding: 10px 100px;
+}
+
+.navbar-nav .nav-item{
+    padding: 0 10px;
+}
+
+.start-btn-color{
+    background-color: orange;
+    color: white;
+}
+
+.start-btn-color:focus, .start-btn-color:hover {
+    background-color: green;
+    color: white;
+}
+
