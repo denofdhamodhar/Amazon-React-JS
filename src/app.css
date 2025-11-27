@@ -1,0 +1,9 @@
+.underline-effect{
+    text-decoration: underline orange 2px wavy;
+    text-underline-offset: 10px;
+}
+
+h3::selection{
+    color: white;
+    background-color: orange;
+}
