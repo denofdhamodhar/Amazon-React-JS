@@ -7,9 +7,7 @@ Checkout the branch : [BasicRoute + AccountCreatePage](https://github.com/denofd
 
 Packages used : 
 
-<code>
-npm i bootstrap@5.3.8 bootstrap-icons react-router-dom
-</code> 
+```npm i bootstrap@5.3.8 bootstrap-icons react-router-dom```
 
 - "bootstrap" : "^5.3.8" <br>
 - "bootstrap-icons" : "^1.13.1" <br>
