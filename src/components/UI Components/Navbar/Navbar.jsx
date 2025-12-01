@@ -1,11 +1,12 @@
 import React from "react";
 import "./navbar.css";
-import logo from "../../../assets/256px-Amazon_logo.svg.png";
+// import logo from "../../../assets/256px-Amazon_logo.svg.png";
+import logo from "../../../assets/AmazonLogowhite.png";
 
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary center-content">
+      <nav className="navbar navbar-expand-lg bg-dark center-content" data-bs-theme="dark">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
