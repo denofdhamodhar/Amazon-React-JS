@@ -1,21 +1,26 @@
-.inline-p{
-    display: inline;
+.inline-p {
+  display: inline;
 }
 
-.color-orange{
-    color: orange;
+.color-orange {
+  color: orange;
 }
 
-.card{
-    background-color: orange;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card {
+  background-color: orange;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.login-btn{
+    display: block;
+    width: 100%;
 }

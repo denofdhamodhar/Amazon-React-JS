@@ -9,7 +9,7 @@ let axiosInstance = axios.create({
 axiosInstance.interceptors.request.use((req) => {
     let token = localStorage.getItem(API_CONFIG.TOKEN);
     if(token){
-        req.headers[API_CONFIG.AUTHORIZATION]  = `${API_CONFIG.BEARER} ${token}`;
+        req.headers[API_CONFIG.AUTHORIZATION]  = `${API_CONFIG.BEARER} ${token}`; 
     }
     return req
 })

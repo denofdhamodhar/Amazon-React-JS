@@ -1,3 +1,4 @@
 export const API_END_POINTS = {
-    CREATEACCOUNT : "auth/login"
+    CREATEACCOUNT : "auth/login",
+    LOGIN : "auth/me"
 }
