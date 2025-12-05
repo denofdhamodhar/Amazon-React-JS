@@ -10,10 +10,18 @@
     height: auto;
     background-color: white;
     border: 1px solid sliver;
-    padding: 10px;
     font-size: 1.1rem;
-    top: 39px;
+    top: 44px;
     border-radius: 4px;
-    list-style-type: none;
+    list-style-type: none; 
     z-index: 100;
+    border: 1px solid rgba(188, 184, 184, 0.619);
+}
+
+.suggestions-box > li{
+  padding: 6px 10px;
+}
+
+.suggestions-box > li:hover{
+  background-color: rgba(188, 184, 184, 0.263);
 }

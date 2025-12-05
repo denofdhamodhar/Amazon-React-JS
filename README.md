@@ -2,39 +2,35 @@
 
 ## Feature : A search button along with a dropdown box that includes functionality.
 
-- Insert input field in the middle of navbar
-- Whenever user search display suggestions
+1. Add an input field to the center of the navbar
+2. Display suggestions when users search for a specific item
 
+---
+
+**1. Add an input field to the center of the navbar**
+
+`Created a search component named "NavbarSearchInput.jsx".`
+
+- Developed a Bootstrap input field with a Bootstrap search icon. 
+- Utilized flex concepts to center the input field.
+![Navbar with search input field](./src/assets/githubimgs/searchinput.png)
 
 ---
 
-**1. Insert input field in the middle of navbar**
+**2. Display suggestions when users search for a specific item**
 
-`npm i axios`
+To provide display suggestions, we use the DummyJSON API:
 
-axiosInstance :
+`https://dummyjson.com/products/search?q=phone`
 
-- To aviod multiple times writing common domain url or base url uses axiosInstance.
-- We can capture every api and we can handle (req + res) it.
-- Here we can add tokens in request api call headers and we can get the data in response api call
+- The term "phone" is a search keyword.
+- When a user inputs a product keyword, the API suggests relevant products. 
+- The user entered keyword replace in the place of "phone" keyword.
+- We retrieve some products from that API.
+- Using the map function, we extract all the product titles and display them.
+- Whenever the user logs in, the product titles was displayed.
+- **Usernot Logged In:**
+![Navbar with search input field](./src/assets/githubimgs/usernotloggedin.png)
 
-<br>
-
-_Here every api call move from axiosInstance_
-
-    a. const axiosInstance = axios.create({})
-    b. baseUrl : "comman url or domain url"
-       timeout : " 15000 " It is in millisec 15sec
-
-Folder structure after setup axios center
-
-![alt text](./src/assets/githubimgs/image.png)
-
-- axios folder setup axios center > axiosInstance.js
-- constants folder
-  - api.js ( here axiosInstance variables created in obj )
-  - endPoints ( here endPoints variables created in obj )
-- service folder
-  - authService.js ( Authentication service means login and signup api's call done from here )
-
----
+- **User Logged In:**
+![Navbar with search input field](./src/assets/githubimgs/afterLoggedIn.png)
