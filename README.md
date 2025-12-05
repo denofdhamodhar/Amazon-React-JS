@@ -1,6 +1,6 @@
 # Amazon ( React JS )
 
-## Feature : A search button along with a dropdown box that includes functionality.
+## Feature : Search input field with a dropdown for suggested options
 
 1. Add an input field to the center of the navbar
 2. Display suggestions when users search for a specific item
