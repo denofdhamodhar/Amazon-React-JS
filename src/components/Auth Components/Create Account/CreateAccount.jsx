@@ -17,7 +17,6 @@ function CreateAccount() {
       try {
         let response = await createAccount(userdata);
         if (response != undefined) {
-          localStorage.setItem(CREATEACCOUNT_CONFIG.LOCAL_USERDATA_SETUP_NAME, JSON.stringify(response.data));
           localStorage.setItem(CREATEACCOUNT_CONFIG.LOCAL_ACCESS_TOKEN, response.data.accessToken); // here stringify not used because it's a single data
           setInfoDisplay(CREATEACCOUNT_CONFIG.ACCOUNT_CREATED);
           // window.location.href = "/login"

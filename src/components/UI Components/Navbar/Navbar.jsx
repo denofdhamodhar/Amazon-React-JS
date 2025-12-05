@@ -6,19 +6,17 @@ import { checkValidUser, fetchUserDatafromLocal } from "../../../utils/utils";
 
 function Navbar() {
   const [userData, setUserData] = useState({});
-  const [displayLogout, setDisplayLogout] = useState(false);
+  let isUserValid = checkValidUser();
 
   useEffect(() => {
-    const isUserValid = checkValidUser();
-    setDisplayLogout(isUserValid);
+    if (!isUserValid) return;
 
-    if (isUserValid) {
-      const data = fetchUserDatafromLocal();
-      if (data != null) {
-        setUserData(data);
-      }
+    let data = fetchUserDatafromLocal();
+    if (data !== undefined) {
+      setUserData(data);
     }
-  }, []);
+  }, [isUserValid]);
+
   function logoutfn() {
     localStorage.clear();
     location.reload();
@@ -52,9 +50,9 @@ function Navbar() {
                   Home
                 </a>
               </li>
-              {displayLogout && (
+              {isUserValid && (
                 <>
-                  <li className="nav-item text-white d-flex justify-content-center align-items-center">
+                  <li className="nav-item text-white d-flex justify-content-center align-items-center me-2">
                     <div>{userData.firstName}</div>
                     <div>
                       <img
@@ -68,8 +66,11 @@ function Navbar() {
                 </>
               )}
               <li>
-                {displayLogout ? (
-                  <button onClick={() => logoutfn()} className="btn btn-danger">
+                {isUserValid ? (
+                  <button
+                    onClick={() => logoutfn()}
+                    className="btn btn-danger"
+                  >
                     Logout
                   </button>
                 ) : (

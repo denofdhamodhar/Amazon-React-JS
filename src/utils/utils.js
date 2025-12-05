@@ -1,6 +1,7 @@
 export const checkValidUser = () => {
     let status = localStorage.getItem("status");
-    if(status != undefined && status == 200){
+    let token = localStorage.getItem("accessToken");
+    if(status != undefined && status == 200 && token != undefined){
         return true
     }else{
         return false

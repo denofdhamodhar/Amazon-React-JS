@@ -53,7 +53,12 @@ function Login() {
         async function fetchUserData() {
           try {
             let response = await login();
-            localStorage.setItem("OG_Data",JSON.stringify(response.data));
+            let userData = {
+              firstName : response.data.firstName,
+              lastName : response.data.lastName,
+              image : response.data.image
+            }
+            localStorage.setItem("OG_Data",JSON.stringify(userData));
             localStorage.setItem("status", response.status)
             if (response.status == 200) {
               window.location = "/";
@@ -95,7 +100,7 @@ function Login() {
           <div className="p-2">
             <form>
               <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">
+                <label htmlFor={"exampleInputEmail1"} className="form-label">
                   Email address
                 </label>
                 <input
@@ -114,7 +119,7 @@ function Login() {
                 </div>
               </div>
               <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">
+                <label htmlFor={"exampleInputPassword1"} className="form-label">
                   Password
                 </label>
                 <input
