@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "../../UI Components/Navbar/Navbar";
 import { createAccount } from "../../../service/authService";
 import { CREATEACCOUNT_CONFIG } from "../../../constants/createAccount";
+import { Link } from "react-router-dom";
 
 function CreateAccount() {
   let [infoDisplay, setInfoDisplay] = useState("");
@@ -65,7 +66,7 @@ function CreateAccount() {
             <p className="text-white text-center">{infoDisplay}</p>
           </div>
           <div className="d-flex justify-content-center">
-            <a href="/login" className="btn btn-dark login-btn">Login</a>
+            <Link to="/login" className="btn btn-dark login-btn">Login</Link>
           </div>
         </div>
       </div>

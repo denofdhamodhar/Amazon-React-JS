@@ -3,6 +3,7 @@ import "./navbar.css";
 // import logo from "../../../assets/256px-Amazon_logo.svg.png";
 import logo from "../../../assets/AmazonLogowhite.png";
 import { checkValidUser, fetchUserDatafromLocal } from "../../../utils/utils";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [userData, setUserData] = useState({});
@@ -41,14 +42,14 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               <img width="100px" src={logo} alt="Amazon logo" />
-            </a>
+            </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               {isUserValid && (
                 <>
@@ -67,10 +68,7 @@ function Navbar() {
               )}
               <li>
                 {isUserValid ? (
-                  <button
-                    onClick={() => logoutfn()}
-                    className="btn btn-danger"
-                  >
+                  <button onClick={() => logoutfn()} className="btn btn-danger">
                     Logout
                   </button>
                 ) : (
@@ -85,14 +83,14 @@ function Navbar() {
                     </button>
                     <ul className="dropdown-menu">
                       <li>
-                        <a className="dropdown-item" href="/create-account">
+                        <Link className="dropdown-item" to="/create-account">
                           Create Account
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/login">
+                        <Link className="dropdown-item" to="/login">
                           Login
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

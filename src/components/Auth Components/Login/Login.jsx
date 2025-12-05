@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "../../UI Components/Navbar/Navbar";
 import { login } from "../../../service/authService";
 import { LOGIN_CONFIG } from "../../../constants/login";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [userLoginData, setUserLoginData] = useState({
@@ -14,6 +15,8 @@ function Login() {
     usernameError: false,
     passwordError: false,
   });
+
+  const navigate = useNavigate()
 
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
   
@@ -61,7 +64,7 @@ function Login() {
             localStorage.setItem("OG_Data",JSON.stringify(userData));
             localStorage.setItem("status", response.status)
             if (response.status == 200) {
-              window.location = "/";
+              navigate("/")
             }
           } catch (error) {
             console.log(error);
