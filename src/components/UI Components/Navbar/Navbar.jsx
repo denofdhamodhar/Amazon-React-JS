@@ -4,6 +4,7 @@ import "./navbar.css";
 import logo from "../../../assets/AmazonLogowhite.png";
 import { checkValidUser, fetchUserDatafromLocal } from "../../../utils/utils";
 import { Link } from "react-router-dom";
+import NavbarSearchInput from "../NavbarSearchInput/NavbarSearchInput";
 
 function Navbar() {
   const [userData, setUserData] = useState({});
@@ -26,10 +27,10 @@ function Navbar() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg bg-dark center-content"
+        className="navbar navbar-expand-lg bg-dark"
         data-bs-theme="dark"
       >
-        <div className="container-fluid">
+        <div className="container">
           <button
             className="navbar-toggler"
             type="button"
@@ -41,11 +42,12 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div className="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarTogglerDemo01">
             <Link className="navbar-brand" to="/">
               <img width="100px" src={logo} alt="Amazon logo" />
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <NavbarSearchInput />
+            <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" to="/">
                   Home

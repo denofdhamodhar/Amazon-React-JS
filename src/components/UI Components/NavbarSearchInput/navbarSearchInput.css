@@ -1,0 +1,19 @@
+.text-input-box {
+  width: 100%;
+  margin: 0 40px;
+  position: relative;
+}
+
+.suggestions-box{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border: 1px solid sliver;
+    padding: 10px;
+    font-size: 1.1rem;
+    top: 39px;
+    border-radius: 4px;
+    list-style-type: none;
+    z-index: 100;
+}
