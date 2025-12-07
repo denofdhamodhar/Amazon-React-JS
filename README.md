@@ -3,17 +3,19 @@
 This is the main branch it contain starter template of this project
 
 ## Developed an account creation page using Dummy JSON<br>
+
 Checkout the branch : [BasicRoute + AccountCreatePage](https://github.com/denofdhamodhar/Amazon-React-JS/tree/feature/BasicRoute%2BAccountCreatePage)
 
-Packages used : 
+Packages used :
 
-```npm i bootstrap@5.3.8 bootstrap-icons react-router-dom```
+`npm i bootstrap@5.3.8 bootstrap-icons react-router-dom`
 
 - "bootstrap" : "^5.3.8" <br>
 - "bootstrap-icons" : "^1.13.1" <br>
-- "react-router-dom" : "^7.9.6" 
+- "react-router-dom" : "^7.9.6"
 
 ## Feature : CreateAccountfn + LoginPagefn
+
 Checkout the branch : [feature/createAccountfn+loginpagefn](https://github.com/denofdhamodhar/Amazon-React-JS/tree/feature/createAccountfn%2Bloginpagefn)
 
 - Axios center
@@ -21,8 +23,6 @@ Checkout the branch : [feature/createAccountfn+loginpagefn](https://github.com/d
 - JWT token setup with localStorage
 - Validate token
 - Secure login and logout functionlaity
-
----
 
 **1. Axios Center**
 
@@ -52,8 +52,6 @@ Folder structure after setup axios center
   - endPoints ( here endPoints variables created in obj )
 - service folder
   - authService.js ( Authentication service means login and signup api's call done from here )
-
----
 
 **2. Auto fetch login data and 3. JWT token setup with LocalStorage**
 
@@ -88,8 +86,6 @@ let userdata = {
 
 ```
 
----
-
 **4. Validate token**
 
 - We have implemented token generation during account creation.
@@ -103,6 +99,7 @@ let token = localStorage.getItem(API_CONFIG.TOKEN);
     }
     return req
 ```
+
 ```
     if (hasErrors == false) {
       let token = localStorage.getItem("accessToken");
@@ -124,16 +121,49 @@ let token = localStorage.getItem(API_CONFIG.TOKEN);
         }
         fetchUserData();
       } else {
-        // console.error("Your account was not found"); 
+        // console.error("Your account was not found");
         setLoginErrorMsg("Your account was not found!! Click on create account or enter correct login details")
       }
     }
 
 ```
----
+
 **5. Secure login and logout functionlaity**
 
 - After validate login credentials with token we can get a status code
 - If status code present display userprofile and logout option
 - To perform logout here we clear the localStorage data
 
+
+## Feature : Search input field with a dropdown for suggested options
+
+Checkout the branch : [feature/searchInputfield+dropdownfninnavbar](https://github.com/denofdhamodhar/Amazon-React-JS/tree/feature/searchInputfield%2Bdropdownfninnavbar)
+
+1. Add an input field to the center of the navbar
+2. Display suggestions when users search for a specific item
+
+**1. Add an input field to the center of the navbar**
+
+`Created a search component named "NavbarSearchInput.jsx".`
+
+- Developed a Bootstrap input field with a Bootstrap search icon.
+- Utilized flex concepts to center the input field.
+  ![Navbar with search input field](./src/assets/githubimgs/searchinput.png)
+
+**2. Display suggestions when users search for a specific item**
+
+To provide display suggestions, we use the DummyJSON API:
+
+`https://dummyjson.com/products/search?q=phone`
+
+- The term "phone" is a search keyword.
+- When a user inputs a product keyword, the API suggests relevant products.
+- The user entered keyword replace in the place of "phone" keyword.
+- We retrieve some products from that API.
+- Using the map function, we extract all the product titles and display them.
+- Whenever the user logs in, the product titles was displayed.
+- **Usernot Logged In:**
+  ![Navbar with search input field](./src/assets/githubimgs/usernotloggedin.png)
+
+- **User Logged In:**
+  ![Navbar with search input field](./src/assets/githubimgs/afterLoggedIn.png)
