@@ -167,3 +167,12 @@ To provide display suggestions, we use the DummyJSON API:
 
 - **User Logged In:**
   ![Navbar with search input field](./src/assets/githubimgs/afterLoggedIn.png)
+
+
+## Feature : Keyword search to display realted Products  
+
+Checkout the branch : [feature/searchKeywordProductsDisplayPage](https://github.com/denofdhamodhar/Amazon-React-JS/tree/feature/searchKeywordProductsDisplayPage)
+
+1. Route for every keyword search using useParams
+2. Display keyword related products
+3. Filter the products according to category wise
