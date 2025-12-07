@@ -8,12 +8,13 @@ function NavbarSearchInput() {
   const [boxDisplay, setBoxDisplay] = useState(false);
   const [products, setProducts] = useState([]);
   const [titles, setTitles] = useState([]);
+  const [searchKeyWord, setSearchKeyWord] = useState("");
   // https://dummyjson.com/products/search?q=make
 
   function sendData() {
-    console.log("Send Data");
-    console.log(products);
-    console.log("----------------------------------------");
+    if(titles.length > 0 && titles[0] !== "No products are avaliable" && titles[0] !== "Please login to your account"){
+      window.location = `/search-product/${searchKeyWord}`
+    }
   }
 
   async function keywordsSuggestionApicall(word) {
@@ -49,6 +50,7 @@ function NavbarSearchInput() {
     if (keywordCapture.length > 0) {
       // alert("call fn")
       setBoxDisplay(true);
+      setSearchKeyWord(keywordCapture);
       keywordsSuggestionApicall(keywordCapture);
     } else {
       setBoxDisplay(false);

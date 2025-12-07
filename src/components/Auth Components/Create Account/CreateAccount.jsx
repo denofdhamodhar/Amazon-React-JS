@@ -35,7 +35,7 @@ function CreateAccount() {
         <Navbar />
       </div>
       <div
-        className="card"
+        className="card card-in-createAccountPage"
         style={{
           width: "25rem",
           height: "auto",

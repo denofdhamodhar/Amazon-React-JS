@@ -82,7 +82,7 @@ function Login() {
         <Navbar />
       </div>
       <div
-        className="card"
+        className="card card-color"
         style={{
           width: "25rem",
           height: "auto",

@@ -55,7 +55,7 @@ function Navbar() {
               </li>
               {isUserValid && (
                 <>
-                  <li className="nav-item text-white d-flex justify-content-center align-items-center me-2">
+                  <li className="nav-item text-white d-flex justify-content-center align-items-center me-3">
                     <div>{userData.firstName}</div>
                     <div>
                       <img

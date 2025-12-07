@@ -1,5 +1,9 @@
 .navbar{
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999 !important;
 }
 .center-content{
     padding: 10px 100px;
