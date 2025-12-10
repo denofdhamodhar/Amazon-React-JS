@@ -1,0 +1,61 @@
+.main-box{
+    margin-top: 60px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.sidebar{
+    border-right: 1px solid silver;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
+
+.content-box{
+    margin-left: 450px;
+}
+
+.content-box-card-box{
+    padding: 60px 10px;
+}
+
+/* Tablet screens (768px to 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 300px;
+  }
+
+  .content-box {
+    margin-left: 350px;
+  }
+}
+
+/* Small tablets (576px to 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    top: 0;
+  }
+
+  .content-box {
+    margin-left: 0;
+  }
+
+  .content-box-card-box {
+    padding: 20px 10px;
+  }
+}
+
+/* Mobile screens (below 576px) */
+@media (max-width: 576px) {
+  .main-box {
+    margin-top: 50px;
+  }
+
+  .content-box-card-box {
+    padding: 10px 5px;
+  }
+}

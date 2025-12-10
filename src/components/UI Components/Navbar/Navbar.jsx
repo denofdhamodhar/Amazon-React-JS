@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg bg-dark"
+        className="navbar navbar-expand-md bg-dark"
         data-bs-theme="dark"
       >
         <div className="container">
