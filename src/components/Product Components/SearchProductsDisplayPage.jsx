@@ -21,11 +21,15 @@ function SearchProductsDisplayPage() {
   let [priceFilterSelected, setpriceFilterSelected] = useState("");
   let [categorySelected, setCategorySelected] = useState("");
 
+  //cart Array
+  let [cartArray, setCartArray] = useState([]);
+
   let params = useParams();
   let keyword = params.searchKeyword;
   // console.log(keyword);
   let isValidUser = checkValidUser();
 
+  // data fetch
   useEffect(() => {
     if (isValidUser == true) {
       async function fetchsearhkeywordproducts() {
@@ -44,6 +48,7 @@ function SearchProductsDisplayPage() {
     }
   }, [keyword, isValidUser]);
 
+  // filters
   useEffect(() => {
     if (categoryFilterIndicator === true && priceFilterIndicator === true) {
       if (categorySelected !== undefined && categorySelected !== "") {
@@ -68,19 +73,19 @@ function SearchProductsDisplayPage() {
       categoryFilterIndicator === false &&
       priceFilterIndicator === true
     ) {
-      if(priceFilterSelected === "High"){
+      if (priceFilterSelected === "High") {
         let tempData = [...safeCopyOGData];
-        let priceFilter = tempData.sort((a,b) => {
-          return b.price - a.price
-        })
-        setData(priceFilter)
+        let priceFilter = tempData.sort((a, b) => {
+          return b.price - a.price;
+        });
+        setData(priceFilter);
       }
-      if(priceFilterSelected === "Low"){
-       let tempData = [...safeCopyOGData];
-        let priceFilter = tempData.sort((a,b) => {
-          return a.price - b.price
-        })
-        setData(priceFilter)
+      if (priceFilterSelected === "Low") {
+        let tempData = [...safeCopyOGData];
+        let priceFilter = tempData.sort((a, b) => {
+          return a.price - b.price;
+        });
+        setData(priceFilter);
       }
     } else if (
       categoryFilterIndicator === true &&
@@ -96,10 +101,15 @@ function SearchProductsDisplayPage() {
         setData(safeCopyOGData);
       }
     } else {
-      console.log("nothing");
       setData(safeCopyOGData);
     }
-  }, [priceFilterSelected, categorySelected, safeCopyOGData, priceFilterIndicator, categoryFilterIndicator]);
+  }, [
+    priceFilterSelected,
+    categorySelected,
+    safeCopyOGData,
+    priceFilterIndicator,
+    categoryFilterIndicator,
+  ]);
 
   function highPriceFilterIndicator(e) {
     if (e.target.checked === true) {
@@ -131,13 +141,19 @@ function SearchProductsDisplayPage() {
     }
   }
 
-  // console.log(priceFilterIndicator, priceFilterSelected)
+  function AddtoCartArray(product) {
+    console.log("Product Added to Cart");
+    setCartArray((prev) => [...prev, product]);
+  }
+
+  console.log(cartArray);
+
   return (
     <div>
       <Navbar />
       <div className="main-box">
         <div className="row">
-          <div className="col-3 sidebar p-5 ">
+          <div className="col-2 sidebar p-5 ">
             <div>
               <p>Filters</p>
               <hr />
@@ -183,7 +199,7 @@ function SearchProductsDisplayPage() {
               </div>
             </div>
           </div>
-          <div className="col content-box content-box-card-box">
+          <div className="col content-box content-box-card-box ">
             {data.map((product) => (
               <div
                 key={product.id}
@@ -194,7 +210,7 @@ function SearchProductsDisplayPage() {
                   <div className="col-md-4">
                     <img
                       src={product.images[0]}
-                      className="img-fluid rounded-start"
+                      className="img-fluid rounded-start pt-4"
                       alt={product.title}
                     />
                   </div>
@@ -203,12 +219,32 @@ function SearchProductsDisplayPage() {
                       <h5 className="card-title">{product.title}</h5>
                       <p className="card-text">{product.description}</p>
                       <h5>₹{product.price}</h5>
-                      <button className="btn btn-warning">Add to cart</button>
+                      <button
+                        className="btn btn-warning"
+                        onClick={() => AddtoCartArray(product)}
+                      >
+                        Add to cart
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="col-4 cartbox p-5">
+            <p className="h5">Cart</p>
+            <hr />
+            <div className="row">
+              <div className="col-2">
+                {cartArray.map((product, i) => (
+                  <div className="cart-item py-2" key={i}>
+                    <div className="cart-col index">{i + 1}.</div>
+                    <div className="cart-col title">{product.title}</div>
+                    <div className="cart-col price">₹{product.price}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

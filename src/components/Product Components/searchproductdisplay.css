@@ -12,7 +12,7 @@
 }
 
 .content-box{
-    margin-left: 450px;
+    margin-left: 375px;
 }
 
 .content-box-card-box{
@@ -58,4 +58,24 @@
   .content-box-card-box {
     padding: 10px 5px;
   }
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 40px 200px auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item .title{
+  text-align: left;
+}
+
+.cartbox{
+  border-left: 1px solid silver;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  right: 0;
+  height: 100vh;
 }
